@@ -1,5 +1,5 @@
 <template>
-  <div v-if="loaded">
+  <div v-if="loaded" class="text-copy-primary">
     <section
       class="text-3xl flex justify-center content-center flex-col mx-auto text-center"
     >
