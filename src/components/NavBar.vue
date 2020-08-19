@@ -17,32 +17,59 @@
           <path d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-      <img src="../assets/logos/fox-hub.png" alt="Logo" class="h-auto w-24" />
+      <span class="text-xl text-copy-primary font-bold">MinhasHoras</span>
     </div>
     <div class="flex items-center">
       <div class="hidden md:block md:flex md:justify-between md:bg-transparent">
-        <button
-          title="Wishlist"
-          class="text-copy-primary flex items-center p-3 font-medium mr-2 text-center bg-background-secondary rounded hover:bg-background-tertiary focus:outline-none focus:bg-background-tertiary"
-        >
-          <svg
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            class="w-6 h-6 mr-2"
+        <router-link to="/">
+          <button
+            title="Home"
+            class="text-copy-primary flex items-center p-3 font-medium mr-2 text-center bg-background-secondary rounded hover:bg-background-tertiary focus:outline-none focus:bg-background-tertiary"
           >
-            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-          </svg>
-          <router-link to="/">Home</router-link>
-        </button>
+            <svg
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              class="w-6 h-6 mr-2"
+            >
+              <path
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+              ></path>
+            </svg>
+            Home
+          </button>
+        </router-link>
+
+        <router-link to="/about">
+          <button
+            title="Sobre"
+            class="text-copy-primary flex items-center p-3 font-medium mr-2 text-center bg-background-secondary rounded hover:bg-background-tertiary focus:outline-none focus:bg-background-tertiary"
+          >
+            <svg
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              class="w-6 h-6 mr-2"
+            >
+              <path
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+              ></path>
+            </svg>
+            Sobre
+          </button>
+        </router-link>
 
         <theme-switcher :theme="theme" @themeChanged="updateTheme" />
 
         <button
           class="text-copy-primary flex items-center p-3 font-medium mr-2 text-center bg-background-secondary rounded hover:bg-background-tertiary focus:outline-none focus:bg-background-tertiary"
+          @click="valorMoeda"
         >
           <svg
             fill="none"
@@ -77,7 +104,7 @@
         </button>
         <a
           rel="noopener"
-          href="https://www.buymeacoffee.com/fayazahmed"
+          href="https://www.buymeacoffee.com/joaopinheiro"
           target="_blank"
           title="Help me keep this site alive"
           class="flex items-center px-3 py-3 font-medium mr-2 text-center bg-orange-600 rounded text-white hover:bg-orange-700 focus:outline-none focus:bg-orange-400"
@@ -88,9 +115,9 @@
             alt="Buy Me Coffee"
           />
           <p class="font-bold">
-            <router-link to="/about">About</router-link>
-          </p></a
-        >
+            Café
+          </p>
+        </a>
       </div>
     </div>
 
@@ -122,18 +149,7 @@
         @click="isOpen = false"
         class="flex w-full items-center p-4 border-b border-border-color-primary"
       >
-        <img
-          v-if="theme === 'theme-light'"
-          src="../assets/logos/fox-hub.png"
-          alt="Logo"
-          class="h-auto w-32 mx-auto"
-        />
-        <img
-          v-else
-          src="../assets/logos/fox-hub.png"
-          alt="Logo"
-          class="h-auto w-32 mx-auto"
-        />
+        <span class="text-xl text-copy-primary font-bold">MinhasHoras</span>
       </span>
       <span
         @click="isOpen = false"
@@ -173,7 +189,7 @@
             ></path>
           </svg>
         </span>
-        <span>Trending Globally</span></span
+        <span>Menu A</span></span
       >
       <span
         @click="isOpen = false"
@@ -191,7 +207,7 @@
             <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
           </svg>
         </span>
-        <span>Wishlist</span></span
+        <span>Menu B</span></span
       >
       <span
         @click="isOpen = false"
@@ -211,7 +227,7 @@
             ></path>
           </svg>
         </span>
-        <span>About</span></span
+        <span>Menu C</span></span
       >
       <span
         @click="isOpen = false"
@@ -231,7 +247,7 @@
             ></path>
           </svg>
         </span>
-        <span>Contact</span></span
+        <span>Menu D</span></span
       >
       <div class="fixed bottom-0 w-full">
         <button
@@ -250,12 +266,12 @@
               d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
             ></path>
           </svg>
-          <span>Share</span>
+          <span>Menu F</span>
         </button>
         <a
           rel="noopener"
           class="flex items-center p-4 bg-orange-700 text-white "
-          href="https://www.buymeacoffee.com/fayazahmed"
+          href="https://www.buymeacoffee.com/joaopinheiro"
           target="_blank"
         >
           <img
@@ -264,9 +280,9 @@
             alt="Buy Me Coffee"
           />
           <p>
-            <span class="font-bold">Buy me a Coffee</span>
+            <span class="font-bold">Menu G</span>
             <br />
-            <span class="text-sm text-white">Help me keep this site alive</span>
+            <span class="text-sm text-white">Texto</span>
           </p>
         </a>
       </div>
@@ -275,10 +291,10 @@
 </template>
 
 <script>
-import ThemeSwitcher from '../components/ThemeSwitcher'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 export default {
-  name: 'BavBar',
+  name: 'NavBar',
   components: {
     ThemeSwitcher,
   },
@@ -295,6 +311,9 @@ export default {
     updateTheme(theme) {
       this.theme = theme
       this.$emit('newTheme', theme)
+    },
+    valorMoeda() {
+      window.ipcRenderer.send('valor-moeda', 'usd')
     },
   },
   watch: {

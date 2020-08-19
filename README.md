@@ -15,6 +15,12 @@ yarn run serve
 yarn electron:serve
 ```
 
+### Generate Icons
+
+```shell
+yarn electron:generate-icons
+```
+
 ### Compiles and minifies for production
 
 ```shell

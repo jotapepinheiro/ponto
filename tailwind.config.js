@@ -22,7 +22,7 @@ module.exports = {
 
       copy: {
         primary: 'var(--text-copy-primary)',
-        secondary: 'var(--text-copy-hover)',
+        secondary: 'var(--text-copy-secondary)',
       },
 
       'border-color': {

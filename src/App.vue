@@ -4,17 +4,18 @@
     class="bg-background-secondary h-screen content-wrapper"
     :class="theme"
   >
-    <navbar @newTheme="updateTheme" />
+    <app-navbar @newTheme="updateTheme" />
     <router-view class="pt-20" />
   </div>
 </template>
 
 <script>
-import navbar from '@/components/NavBar'
+import appNavbar from '@/components/NavBar'
 
 export default {
+  name: 'MinhasHoras',
   components: {
-    navbar,
+    appNavbar,
   },
   data() {
     return {
@@ -24,6 +25,18 @@ export default {
   methods: {
     updateTheme(theme) {
       this.theme = theme
+    },
+  },
+  computed: {
+    // store getters
+    alwaysOnTop() {
+      return this.$store.getters.alwaysOnTop
+    },
+    notifications() {
+      return this.$store.getters.notifications
+    },
+    os() {
+      return this.$store.getters.os
     },
   },
 }

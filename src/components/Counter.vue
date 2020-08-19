@@ -3,28 +3,28 @@
     <section
       class="text-3xl flex justify-center content-center flex-col mx-auto text-center"
     >
-      <h5 v-if="!expired">Time Remaining</h5>
-      <h5 v-else>The time is over</h5>
+      <h5 v-if="!expired">Tempo Restante</h5>
+      <h5 v-else>O tempo acabou</h5>
     </section>
     <section class="flex text-6xl justify-center content-center">
       <div class="days mr-2 relative">
         {{ displayDays }}
-        <div class="label w-full text-sm absolute bottom-0">days</div>
+        <div class="label w-full text-sm absolute bottom-0">dias</div>
       </div>
       <span class="leading-snug">:</span>
       <div class="hours mx-2 relative">
         {{ displayHours }}
-        <div class="label w-full text-sm absolute bottom-0">hours</div>
+        <div class="label w-full text-sm absolute bottom-0">horas</div>
       </div>
       <span class="leading-snug">:</span>
       <div class="minutes mx-2 relative">
         {{ displayMinutes }}
-        <div class="label w-full text-sm absolute bottom-0">minutes</div>
+        <div class="label w-full text-sm absolute bottom-0">minutos</div>
       </div>
       <span class="leading-snug">:</span>
       <div class="seconds ml-2 relative">
         {{ displaySeconds }}
-        <div class="label w-full text-sm absolute bottom-0">seconds</div>
+        <div class="label w-full text-sm absolute bottom-0">segundos</div>
       </div>
     </section>
   </div>
